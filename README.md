@@ -68,3 +68,24 @@ export async function unmount () {
       jsonpFunction: `webpackJsonp_${name}`
     }
   },
+
+
+
+
+### 微前端运行原理： 
+1.监视路由变化
+
+hash 路由：window.onhashchange
+
+history 路由： 
+history.go  history.back  history.forward 使用popstate事件 window.onpopstate
+
+    window.addEventListener('popstate', () => {
+        console.log('popstate');
+    })
+
+pushstate replacestate 需要通过函数重写方式进行劫持
+
+2.匹配子应用 
+3.加载子应用 
+4.渲染子应用
